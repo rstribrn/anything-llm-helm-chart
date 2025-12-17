@@ -12,7 +12,8 @@ spec:
   selector:
     {{- include "anything-llm.selectorLabels" . | nindent 4 }}
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.port }}
   type: {{ .Values.service.type }}
